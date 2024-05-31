@@ -3,8 +3,12 @@ import replicate
 import os
 
 # App title
-st.set_page_config(page_title="🦙💬 Llama 2 Chatbot")
-
+#cle = "r8_04XQqrT49S7nAYgtUUnGTmS1qlCUFnd3EOn0Q"
+st.set_page_config(page_title="💬 Parle avec Docteur Evilafo")
+st.set_page_config(page_title="💬 IA Santé CI",
+    layout="wide",  # Options: "centered" or "wide"
+    initial_sidebar_state="collapsed"  # This hides the sidebar by default
+)
 # Replicate Credentials
 with st.sidebar:
     st.title('🦙💬 Llama 2 Chatbot')

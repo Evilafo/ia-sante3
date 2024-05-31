@@ -15,12 +15,12 @@ st.header("💬 Parle avec Dr Evilafo")
 with st.sidebar:
     st.title('💬 Parle avec Dr Evilafo ')
     st.write('Votre medecin virtuel.')
-    st.write('API key : r8_04XQqrT49S7nAYgtUUnGTmS1qlCUFnd3EOn0Q ')
+    st.write('API key : r8_04XQqrT49S7nAYgtUUnGTmS1qlCUFnd3EOn0Q')
     if 'REPLICATE_API_TOKEN' in st.secrets:
         st.success('API key already provided!', icon='✅')
         replicate_api = st.secrets['REPLICATE_API_TOKEN']
     else:
-        replicate_api = st.text_input('Token de l API: r8_04XQqrT49S7nAYgtUUnGTmS1qlCUFnd3EOn0Q', type='password')
+        replicate_api = st.text_input("r8_04XQqrT49S7nAYgtUUnGTmS1qlCUFnd3EOn0Q", type='password')
         if not (replicate_api.startswith('r8_') and len(replicate_api)==40):
             st.warning('Saisir les identifiants!', icon='⚠️')
         else:
@@ -72,8 +72,8 @@ def generate_llama2_response(prompt_input):
     return output
 
 # User-provided prompt
-#if prompt := st.chat_input(disabled=not replicate_api):
-if prompt := st.chat_input(placeholder="Entrez votre préocupation ici...", disabled=not replicate_api):
+if prompt := st.chat_input(disabled=not replicate_api):
+#if prompt := st.chat_input(placeholder="Entrez votre préocupation ici...", disabled=not replicate_api):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.write(prompt)

@@ -5,7 +5,7 @@ import os
 # App title
 #cle = "r8_04XQqrT49S7nAYgtUUnGTmS1qlCUFnd3EOn0Q"
 st.set_page_config(page_title="💬 Parle avec Docteur Evilafo")
-st.set_page_config(page_title="💬 IA Santé CI",
+st.set_page_config(page_title="IA Santé CI",
     layout="wide",  # Options: "centered" or "wide"
     initial_sidebar_state="collapsed"  # This hides the sidebar by default
 )

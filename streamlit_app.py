@@ -82,3 +82,17 @@ if st.session_state.messages[-1]["role"] != "assistant":
             placeholder.markdown(full_response)
     message = {"role": "assistant", "content": full_response}
     st.session_state.messages.append(message)
+
+
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            .stActionButton {visibility: hidden;}
+            .viewerBadge_link__qRIco {visibility: hidden;}
+            .viewerBadge_container__r5tak {visibility: hidden;}
+            .styles_viewerBadge__CvC9N {visibility: hidden;}
+            .viewerBadge_container__r5tak {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)

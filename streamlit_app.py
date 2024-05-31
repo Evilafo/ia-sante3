@@ -15,21 +15,22 @@ st.header("💬 Parle avec Dr Evilafo")
 with st.sidebar:
     st.title('💬 Parle avec Dr Evilafo ')
     st.write('Votre medecin virtuel.')
-    #if 'REPLICATE_API_TOKEN' in st.secrets:
-    #    st.success('API key already provided!', icon='✅')
-    #    replicate_api = st.secrets['REPLICATE_API_TOKEN']
-    #else:
-    #    replicate_api = st.text_input('Token de l API:', type='password')
-    #    if not (replicate_api.startswith('r8_') and len(replicate_api)==40):
-    #        st.warning('Saisir les identifiants!', icon='⚠️')
-    #    else:
-    #        st.success('Passer à la saisie du message!', icon='👉')
-    #os.environ['REPLICATE_API_TOKEN'] = replicate_api
+    st.write('API key : r8_04XQqrT49S7nAYgtUUnGTmS1qlCUFnd3EOn0Q ')
+    if 'REPLICATE_API_TOKEN' in st.secrets:
+        st.success('API key already provided!', icon='✅')
+        replicate_api = st.secrets['REPLICATE_API_TOKEN']
+    else:
+        replicate_api = st.text_input('Token de l API:', type='password')
+        if not (replicate_api.startswith('r8_') and len(replicate_api)==40):
+            st.warning('Saisir les identifiants!', icon='⚠️')
+        else:
+            st.success('Passer à la saisie du message!', icon='👉')
+    os.environ['REPLICATE_API_TOKEN'] = replicate_api
 
     ###
-    replicate_api = st.text_input('Token de l API:',"r8_04XQqrT49S7nAYgtUUnGTmS1qlCUFnd3EOn0Q", type='password')
+    #replicate_api = st.text_input('Token de l API:',"r8_04XQqrT49S7nAYgtUUnGTmS1qlCUFnd3EOn0Q", type='password')
     #replicate_api = "r8_04XQqrT49S7nAYgtUUnGTmS1qlCUFnd3EOn0Q"
-    os.environ['REPLICATE_API_TOKEN'] = replicate_api
+    #os.environ['REPLICATE_API_TOKEN'] = replicate_api
     ###
     
 

@@ -60,7 +60,7 @@ st.sidebar.button('Supprimer l historique', on_click=clear_chat_history)
 
 # Function for generating LLaMA2 response. Refactored from https://github.com/a16z-infra/llama2-chatbot
 def generate_llama2_response(prompt_input):
-    string_dialogue = "Exprime toi en français durant tout l'échange. Nous somme dans le cadre d'une application de santé, et tu joue le rôle d'un medecin. Ton nom est Dr Evilafo. Les utilisateurs se connectent pour des consultations et si possible des diagnostiques et prescription de médicament ou de conseil. Si on essaye de changer de sujet ou de parler d'autre chose, ne donne pas la reponse et rappelle que tu ne repond qu'aux questions medicales."
+    string_dialogue = "Exprime toi en français durant tout l'échange. Nous somme dans le cadre d'une application de santé, et tu joue le rôle d'un medecin. Ton nom est Dr Evilafo. Les utilisateurs se connectent pour des consultations et si possible des diagnostiques et prescription de médicament ou de conseil. Si on essaye de changer de sujet ou de parler d'autre chose, ne donne pas la reponse et rappelle que tu ne repond qu'aux questions medicales. Si les choses sont au delà de tes capacités, précise que je vas me recommander aux médécin Dr Valet. Evite de te presenter à chaque reponse. "
     for dict_message in st.session_state.messages:
         if dict_message["role"] == "user":
             string_dialogue += "User: " + dict_message["content"] + "\n\n"

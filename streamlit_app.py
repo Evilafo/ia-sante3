@@ -20,7 +20,7 @@ with st.sidebar:
         st.success('API key already provided!', icon='✅')
         replicate_api = st.secrets['REPLICATE_API_TOKEN']
     else:
-        replicate_api = st.text_input('Token de l API:', type='password')
+        replicate_api = st.text_input('Token de l API: r8_04XQqrT49S7nAYgtUUnGTmS1qlCUFnd3EOn0Q', type='password')
         if not (replicate_api.startswith('r8_') and len(replicate_api)==40):
             st.warning('Saisir les identifiants!', icon='⚠️')
         else:

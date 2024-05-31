@@ -4,17 +4,17 @@ import os
 
 # App title
 #cle = "r8_04XQqrT49S7nAYgtUUnGTmS1qlCUFnd3EOn0Q"
-#st.set_page_config(page_title="💬 Parle avec Docteur Evilafo")
+#st.set_page_config(page_title="💬 Parle avec Dr Evilafo")
 st.set_page_config(page_title="IA Santé CI",
     layout="wide",  # Options: "centered" or "wide"
     initial_sidebar_state="collapsed"  # This hides the sidebar by default
 )
-st.header("Parle avec Dr Evilafo")
+st.header("💬 Parle avec Dr Evilafo")
 
 # Replicate Credentials
 with st.sidebar:
-    st.title('🦙💬 Llama 2 Chatbot')
-    st.write('This chatbot is created using the open-source Llama 2 LLM model from Meta.')
+    st.title('💬 Parle avec Dr Evilafo ')
+    st.write('Votre medecin virtuel.')
     if 'REPLICATE_API_TOKEN' in st.secrets:
         st.success('API key already provided!', icon='✅')
         replicate_api = st.secrets['REPLICATE_API_TOKEN']
@@ -39,7 +39,7 @@ with st.sidebar:
 
 # Store LLM generated responses
 if "messages" not in st.session_state.keys():
-    st.session_state.messages = [{"role": "assistant", "content": "How may I assist you today?"}]
+    st.session_state.messages = [{"role": "assistant", "content": "Bonjour, je suis Dr Evilafo. \n Pouvez-vous me dire ce qui vous amène aujourd'hui ? Quels sont vos symptômes ou vos préoccupations ?"}]
 
 # Display or clear chat messages
 for message in st.session_state.messages:

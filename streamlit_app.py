@@ -15,7 +15,7 @@ st.header("💬 Parle avec Dr Evilafo")
 with st.sidebar:
     st.title('💬 Parle avec Dr Evilafo ')
     st.write('Votre medecin virtuel.')
-    st.write('API key : r8_04XQqrT49S7nAYgtUUnGTmS1qlCUFnd3EOn0Q')
+    #st.write('API key : r8_04XQqrT49S7nAYgtUUnGTmS1qlCUFnd3EOn0Q')
     if 'REPLICATE_API_TOKEN' in st.secrets:
         st.success('API key already provided!', icon='✅')
         replicate_api = st.secrets['REPLICATE_API_TOKEN']
@@ -72,8 +72,8 @@ def generate_llama2_response(prompt_input):
     return output
 
 # User-provided prompt
-if prompt := st.chat_input(disabled=not replicate_api):
-#if prompt := st.chat_input(placeholder="Entrez votre préocupation ici...", disabled=not replicate_api):
+#if prompt := st.chat_input(disabled=not replicate_api):
+if prompt := st.chat_input(placeholder="Entrez votre préocupation ici...", disabled=not replicate_api):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.write(prompt)
